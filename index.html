@@ -27,7 +27,7 @@
                 <button type="submit" id="spotify_submit">Enviar</button>
             </div>
             <div> 
-                <label for="spotify_final_url">Resultado de URL <input type="text" id="spotify_final_url" disabled value="Spotify"></label>
+                <label for="spotify_final_url">Resultado de URL <input type="text" id="spotify_final_url" disabled value=""></label>
             </div>
         </div>
 
@@ -51,6 +51,7 @@
                     }
                     resulting_url+='destination:'+encodeURIComponent(spotify_url)
                     console.log(resulting_url)
+                    $('#spotify_final_url').val(resulting_url)
 
                 }
             })
