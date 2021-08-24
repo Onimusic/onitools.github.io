@@ -5,20 +5,58 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
 
         <!-- Add your site or application content here -->
-        <p>HTML5 Starter Template</p>
+        <div>
+            <h1>Montador de URL para Afiliados Spotify</h1>
+            <div> 
+                <label for="spotify_url">URL destino: <input type="text" id="spotify_url"></label>
+            </div>
+            <div> 
+                <label for="spotify_pubref">Referência Pub (não obrigatório): <input type="text" id="spotify_pubref"></label>
+            </div>
+            <div> 
+                <label for="spotify_adref">Referência AD (não obrigatório): <input type="text" id="spotify_adref"></label>
+            </div>
+            <div>
+                <button type="submit" id="spotify_submit">Enviar</button>
+            </div>
+            <div> 
+                <label for="spotify_final_url">Resultado de URL <input type="text" id="spotify_final_url" disabled value="Spotify"></label>
+            </div>
+        </div>
 
-	<script>
-        console.log('Olá')
+
+	<script TYPE="text/javascript">
+        $( document ).ready(function() {
+            $('#spotify_submit').click(function() {
+                var spotify_url = $('#spotify_url').val();
+                if(!spotify_url || spotify_url ==''){
+                    alert("Insira uma URL de destino!");
+                }else {
+                    var spotify_pubref = $('#spotify_pubref').val();
+                    var spotify_adref = $('#spotify_adref').val();
+
+                    var resulting_url = 'https://prf.hn/click/camref:1101ljNUM/'
+                    if(spotify_pubref !=''){
+                        resulting_url+='pubref:'+encodeURIComponent(spotify_pubref)+'/'
+                    }
+                    if(spotify_adref !=''){
+                        resulting_url+='adref:'+encodeURIComponent(spotify_adref)+'/'
+                    }
+                    resulting_url+='destination:'+encodeURIComponent(spotify_url)
+                    console.log(resulting_url)
+
+                }
+            })
+            console.log( "ready!" );
+        });
+        
     </script>
 
     </body>
