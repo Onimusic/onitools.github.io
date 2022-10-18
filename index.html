@@ -1,64 +1,89 @@
-<!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-    </head>
-    <body>
-
-        <!-- Add your site or application content here -->
-        <div>
-            <h1>Montador de URL para Afiliados Spotify</h1>
-            <div> 
-                <label for="spotify_url">URL destino: <input type="text" id="spotify_url"></label>
-            </div>
-            <div> 
-                <label for="spotify_pubref">Referência Pub (não obrigatório): <input type="text" id="spotify_pubref"></label>
-            </div>
-            <div> 
-                <label for="spotify_adref">Referência AD (não obrigatório): <input type="text" id="spotify_adref"></label>
-            </div>
-            <div>
-                <button type="submit" id="spotify_submit">Enviar</button>
-            </div>
-            <div> 
-                <label for="spotify_final_url">Resultado de URL <input type="text" id="spotify_final_url" disabled value=""></label>
-            </div>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5">Bem vindo ao Onitools. Selecione a ferramenta abaixo:</h1>
+    <div class="row mt-5">
+        <div class="col-12">
+            <a href="split_txt/index.html" class="btn btn-success">Separador de arquivos de texto em pedaços.</a>
         </div>
-
-
-	<script TYPE="text/javascript">
-        $( document ).ready(function() {
-            $('#spotify_submit').click(function() {
-                var spotify_url = $('#spotify_url').val();
-                if(!spotify_url || spotify_url ==''){
-                    alert("Insira uma URL de destino!");
-                }else {
-                    var spotify_pubref = $('#spotify_pubref').val();
-                    var spotify_adref = $('#spotify_adref').val();
-
-                    var resulting_url = 'https://prf.hn/click/camref:1101ljNUM/'
-                    if(spotify_pubref !=''){
-                        resulting_url+='pubref:'+encodeURIComponent(spotify_pubref)+'/'
-                    }
-                    if(spotify_adref !=''){
-                        resulting_url+='adref:'+encodeURIComponent(spotify_adref)+'/'
-                    }
-                    resulting_url+='destination:'+encodeURIComponent(spotify_url)
-                    console.log(resulting_url)
-                    $('#spotify_final_url').val(resulting_url)
-
-                }
-            })
-            console.log( "ready!" );
-        });
-        
-    </script>
-
-    </body>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>
 </html>
+
+
+<!--<!DOCTYPE html>-->
+<!--    <head>-->
+<!--        <meta charset="utf-8">-->
+<!--        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+<!--        <title></title>-->
+<!--        <meta name="description" content="">-->
+<!--        <meta name="viewport" content="width=device-width">-->
+<!--        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>-->
+<!--        &lt;!&ndash; Place favicon.ico and apple-touch-icon.png in the root directory &ndash;&gt;-->
+
+<!--    </head>-->
+<!--    <body>-->
+
+<!--        &lt;!&ndash; Add your site or application content here &ndash;&gt;-->
+<!--        <div>-->
+<!--            <h1>Montador de URL para Afiliados Spotify</h1>-->
+<!--            <div> -->
+<!--                <label for="spotify_url">URL destino: <input type="text" id="spotify_url"></label>-->
+<!--            </div>-->
+<!--            <div> -->
+<!--                <label for="spotify_pubref">Referência Pub (não obrigatório): <input type="text" id="spotify_pubref"></label>-->
+<!--            </div>-->
+<!--            <div> -->
+<!--                <label for="spotify_adref">Referência AD (não obrigatório): <input type="text" id="spotify_adref"></label>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <button type="submit" id="spotify_submit">Enviar</button>-->
+<!--            </div>-->
+<!--            <div> -->
+<!--                <label for="spotify_final_url">Resultado de URL <input type="text" id="spotify_final_url" disabled value=""></label>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+<!--	<script TYPE="text/javascript">-->
+<!--        $( document ).ready(function() {-->
+<!--            $('#spotify_submit').click(function() {-->
+<!--                var spotify_url = $('#spotify_url').val();-->
+<!--                if(!spotify_url || spotify_url ==''){-->
+<!--                    alert("Insira uma URL de destino!");-->
+<!--                }else {-->
+<!--                    var spotify_pubref = $('#spotify_pubref').val();-->
+<!--                    var spotify_adref = $('#spotify_adref').val();-->
+
+<!--                    var resulting_url = 'https://prf.hn/click/camref:1101ljNUM/'-->
+<!--                    if(spotify_pubref !=''){-->
+<!--                        resulting_url+='pubref:'+encodeURIComponent(spotify_pubref)+'/'-->
+<!--                    }-->
+<!--                    if(spotify_adref !=''){-->
+<!--                        resulting_url+='adref:'+encodeURIComponent(spotify_adref)+'/'-->
+<!--                    }-->
+<!--                    resulting_url+='destination:'+encodeURIComponent(spotify_url)-->
+<!--                    console.log(resulting_url)-->
+<!--                    $('#spotify_final_url').val(resulting_url)-->
+
+<!--                }-->
+<!--            })-->
+<!--            console.log( "ready!" );-->
+<!--        });-->
+<!--        -->
+<!--    </script>-->
+
+<!--    </body>-->
+<!--</html>-->

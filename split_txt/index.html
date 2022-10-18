@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-4">Separador de TXT</h1>
+    <p class="my-4">Olá, Inclua abaixo o arquivo que você gostaria de dividir. No campo seguinte digite em quantos pedaços o arquivo
+        deve
+        ser separado.</p>
+
+
+    <div class="row">
+        <div class="col-12">
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Arquivo</label>
+                <input class="form-control" type="file" id="formFile">
+            </div>
+            <div class="mb-3">
+                <label for="formChunks" class="form-label">Pedaços</label>
+                <input type="text" class="form-control" id="formChunks">
+            </div>
+            <button type="button" class="btn btn-primary" id="formButton">Enviar</button>
+        </div>
+    </div>
+</div>
+
+<!--Modal para ficar mais bem apresentável -->
+<div class="modal" tabindex="-1" id="alertModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Alerta</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Favor preencher todos os campos!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
